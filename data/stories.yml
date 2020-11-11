@@ -5,12 +5,25 @@ stories:
 - story: book room
   steps:
   - intent: book_room
-  - action: utter_ask_num_rooms
-  - intent: number_of_rooms_info
-  - action: utter_ask_room_type
-  - intent: give_pref
-  - action: action_set_room_preference
+  - action: booking_form
+  - active_loop: booking_form
+  - slot_was_set:
+    - num_rooms: 2
+    - room_type: "Simple"
+  # - action: booking_form
+  # - active_loop: null
+  # - intent: give_pref
   # - action: utter_confirm_booking
+
+# - story: book room
+#   steps:
+#   - intent: book_room
+#   - action: utter_ask_num_rooms
+#   - intent: number_of_rooms_info
+#   - action: utter_ask_room_type
+#   - intent: give_pref
+#   - action: action_set_room_preference
+#   # - action: utter_confirm_booking
 
 - story: book room with number
   steps:

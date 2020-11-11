@@ -2,6 +2,16 @@ version: "2.0"
 
 rules:
 
+- rule: Deativating form
+  condition:
+  - active_loop: booking_form
+  steps:
+  - action: booking_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_confirm_booking
+
 - rule: responding to FAQ's
   steps:
   - intent: faq

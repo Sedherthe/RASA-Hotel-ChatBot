@@ -25,14 +25,14 @@ slots:
 actions:
   - action_set_room_preference
 
-# forms:
-#   booking_form:
-#     num_rooms:
-#       - type: from_entity
-#         entity: num_rooms
-#     room_type:
-#       - type: from_entity
-#         entity: room_type
+forms:
+  booking_form:
+    num_rooms:
+      - type: from_entity
+        entity: num_rooms
+    room_type:
+      - type: from_entity
+        entity: room_type
 
 responses:
 
