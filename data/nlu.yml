@@ -17,6 +17,55 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: give_pref
+  examples: |
+    - [Simple](room_type)
+    - [Deluxe](room_type)
+
+- intent: book_room
+  examples: |
+    - I would like to book a room
+    - I would like to book room
+    - I would like to book rooms
+    - I want room
+    - I want a room
+    - I want a room here
+    - I want a room to stay
+    - I want to book a room
+    - I want to book rooms
+
+- intent: number_of_rooms_info
+  examples: |
+    - [2]{"entity":"num_rooms", "value":"2"} rooms
+    - [1]{"entity":"num_rooms", "value":"1"} room
+    - [1]{"entity":"num_rooms", "value":"1"}
+    - [2]{"entity":"num_rooms", "value":"2"}
+    - [3]{"entity":"num_rooms", "value":"3"} rooms
+    - [one]{"entity":"num_rooms", "value":"1"} room
+    - [two]{"entity":"num_rooms", "value":"2"} rooms
+    - [three]{"entity":"num_rooms", "value":"3"} rooms
+    - [one]{"entity": "num_rooms", "value":"1"}
+    - [two]{"entity":"num_rooms", "value":"2"}
+    - [three]{"entity":"num_rooms", "value":"3"}
+    - [four]{"entity":"num_rooms", "value":"4"}
+    - [five]{"entity":"num_rooms", "value":"5"}
+    - [six]{"entity":"num_rooms", "value":"6"} rooms
+    - [seven]{"entity":"num_rooms", "value":"7"}
+    - [eight]{"entity":"num_rooms", "value":"8"}
+    - [nine]{"entity":"num_rooms", "value":"9"} rooms
+    - [ten]{"entity":"num_rooms", "value":"10"}
+
+- intent: book_room_with_number
+  examples: |
+    - I would like to book [two]{"entity":"num_rooms", "value": "2"} rooms
+    - I want to book [three]{"entity":"num_rooms", "value":"3"} rooms
+    - I want to book [two]{"entity":"num_rooms", "value": "2"} rooms for my family
+    - I would like to book [two]{"entity":"num_rooms", "value": "2"} rooms to stay
+    - I want [three]{"entity":"num_rooms", "value": "3"} rooms
+    - I want [one]{"entity":"num_rooms", "value": "1"} room
+    - I want to book [one]{"entity":"num_rooms", "value": "1"} room
+    - I need [two]{"entity":"num_rooms", "value": "2"} rooms
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,63 +79,3 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?

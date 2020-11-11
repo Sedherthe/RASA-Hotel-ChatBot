@@ -2,20 +2,55 @@ version: "2.0"
 
 intents:
   - greet
+  - book_room
+  - number_of_rooms_info
+  - book_room_with_number
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - give_pref
+
+entities:
+  - room_type
+  - num_rooms
+  # - num_people
+
+slots:
+  room_type:
+    type: text
+  num_rooms:
+    type: text
+  # num_people:
+  #   type: float
+
+actions:
+  - action_set_room_preference
+
+# forms:
+#   booking_form:
+#     num_rooms:
+#       - type: from_entity
+#         entity: num_rooms
+#     room_type:
+#       - type: from_entity
+#         entity: room_type
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_ask_num_rooms:
+  - text: "How many rooms would you like to book?"
+
+  utter_ask_room_type:
+  - text: "What type of room would you like to book?"
+    buttons:
+    - title: "Simple"
+      payload: /give_pref{{"room_type":"Simple"}}
+    - title: "Deluxe"
+      payload: /give_pref{{"room_type":"Deluxe"}}
+
+  utter_confirm_booking:
+  - text: "You have chosen to book {num_rooms} {room_type} rooms"
+
+  utter_greet:
+  - text: "Hey there! This is the Hotel Bot!"
 
   utter_did_that_help:
   - text: "Did that help you?"
