@@ -2,6 +2,11 @@ version: "2.0"
 
 rules:
 
+- rule: responding to FAQ's
+  steps:
+  - intent: faq
+  - action: utter_faq
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
