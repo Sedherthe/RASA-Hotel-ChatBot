@@ -2,7 +2,19 @@ version: "2.0"
 
 rules:
 
-- rule: Deativating form
+- rule: Activating the booking form, intent 
+  steps:
+  - intent: book_room
+  - action: booking_form
+  - active_loop: booking_form
+
+- rule: Activating the booking form, intent + number of rooms
+  steps:
+  - intent: book_room_with_number
+  - action: booking_form
+  - active_loop: booking_form
+  
+- rule: Deativating the booking form
   condition:
   - active_loop: booking_form
   steps:

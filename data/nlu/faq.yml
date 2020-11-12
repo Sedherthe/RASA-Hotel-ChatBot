@@ -1,0 +1,68 @@
+version: "2.0"
+
+nlu: 
+
+- intent: faq/query_check_in
+  examples: |
+    - What are your check-in timings?
+    - What are the checkin timings?
+    - What are checkin timings?
+    - Checkin timings?
+    - Can I know the check-in timings?
+
+- intent: faq/query_check_out
+  examples: |
+    - What are your check-out timings?
+    - What are the check-out timings?
+    - What are checkout timings?
+    - Checkout timings?
+    - Can I know the checkout timings?
+
+- intent: faq/query_cancel_reservation
+  examples: |
+    - How do I cancel reservation?
+    - How to cancel reservation?
+    - How can I cancel reservation?
+    - I want to cancel reservation?
+    - I would like to cancel reservation
+
+- intent: faq/ask_cancellation_policy
+  examples: |
+    - What is your cancellation policy?
+    - Can I know your cancellatoin policy?
+    - Tell me your cancellation policy?
+    - Is there any cancellation policy?
+
+- intent: faq/ask_restaurant
+  examples: |
+    - Does the hotel have a restaurant?
+    - Do you have a restaurant?
+    - Does this hotel have restaurant?
+    - Is there a restaurant in this hotel?
+    - Do you a restaurant here?
+
+- intent: faq/ask_bf_availability
+  examples: |
+    - Does the hotel offer breakfast?
+    - Does this hotel give breakfast?
+    - Can I get breakfast in this hotel?
+    - Can I get breakfast here?
+    - Is breakfast available in this hotel?
+    - Is breakfast available here?
+
+- intent: faq/ask_bf_timings
+  examples: | 
+    - What are the breakfast timings?
+    - What are the timings of breakfast?
+    - Breakfast timings?
+    - Can I know the breakfat timings?
+    - Tell me the timings of breakfast
+    - Tell me the breakfast timings
+
+- intent: faq/ask_restaurant_timings
+  examples: |
+    - What are the timings of your restaurant?
+    - What are the restaurant timings?
+    - Restaurant timings?
+    - Can I know the restaurant timings?
+    - Tell me the timings of this restaurant
