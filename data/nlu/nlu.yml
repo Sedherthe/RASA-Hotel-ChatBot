@@ -27,6 +27,8 @@ nlu:
     - I would like to book a room
     - I would like to book room
     - I would like to book rooms
+    - I want to book a room to stay 
+    - I want to stay here
     - I want room
     - I want a room
     - I want a room here
@@ -44,24 +46,39 @@ nlu:
     - [one]{"entity":"num_rooms", "value":"1"} room
     - [two]{"entity":"num_rooms", "value":"2"} rooms
     - [three]{"entity":"num_rooms", "value":"3"} rooms
-    - [one]{"entity": "num_rooms", "value":"1"}
-    - [two]{"entity":"num_rooms", "value":"2"}
-    - [three]{"entity":"num_rooms", "value":"3"}
-    - [four]{"entity":"num_rooms", "value":"4"}
-    - [five]{"entity":"num_rooms", "value":"5"}
+    - [one]{"entity": "num_rooms", "value":"1"} room
+    - [two]{"entity":"num_rooms", "value":"2"} rooms
+    - [three]{"entity":"num_rooms", "value":"3"} rooms
+    - [four]{"entity":"num_rooms", "value":"4"} rooms
+    - [five]{"entity":"num_rooms", "value":"5"} rooms
     - [six]{"entity":"num_rooms", "value":"6"} rooms
-    - [seven]{"entity":"num_rooms", "value":"7"}
-    - [eight]{"entity":"num_rooms", "value":"8"}
+    - [seven]{"entity":"num_rooms", "value":"7"} rooms
+    - [eight]{"entity":"num_rooms", "value":"8"} rooms
     - [nine]{"entity":"num_rooms", "value":"9"} rooms
-    - [ten]{"entity":"num_rooms", "value":"10"}
+    - [ten]{"entity":"num_rooms", "value":"10"} rooms
+
+- intent: book_room_with_num_people
+  examples: |
+    - I would like to book a room for [2]{"entity":"num_people", "value":"2"} people
+    - I would like to book a room for [3]{"entity":"num_people", "value":"3"} people
+    - I would like to book a room for [5]{"entity":"num_people", "value":"5"} people
+    - I want to book rooms for [6]{"entity":"num_people", "value":"6"} people
+    - I would like to book a room for [10]{"entity":"num_people", "value":"10"} people
+    - I want to book rooms for [20]{"entity":"num_people", "value":"20"} people
+    - I would like to book [4]{"entity":"num_people", "value":"4"} rooms for [8]{"entity":"num_people", "value":"10"} people
+    - I woulld like to book a room for [10]{"entity":"num_people", "value":"10"} people
+    - I would like to book [one]{"entity":"num_rooms", "value":"1"} room for two{"entity":"num_people", "value":"2"} people
+    - I want a room for [3]{"entity":"num_people", "value":"3"} people
+    - I want to book a room for [one]{"entity":"num_people", "value":"1"} person.
+    - I want to book a room for [1]{"entity":"num_people", "value":"1"} person
 
 - intent: book_room_with_number
   examples: |
     - I would like to book [two]{"entity":"num_rooms", "value": "2"} rooms
     - I want to book [three]{"entity":"num_rooms", "value":"3"} rooms
     - I want to book [two]{"entity":"num_rooms", "value": "2"} rooms for my family
-    - I would like to book [two]{"entity":"num_rooms", "value": "2"} rooms to stay
-    - I want [three]{"entity":"num_rooms", "value": "3"} rooms
+    - I would like to book [2]{"entity":"num_rooms", "value": "2"} rooms to stay
+    - I want [3]{"entity":"num_rooms", "value": "3"} rooms
     - I want [one]{"entity":"num_rooms", "value": "1"} room
     - I want to book [one]{"entity":"num_rooms", "value": "1"} room
     - I need [two]{"entity":"num_rooms", "value": "2"} rooms
@@ -83,3 +100,11 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
+- intent: thankyou
+  examples: |
+    - thanks
+    - thanks, thats great
+    - thank you
+    - thanks man
+    - thanks for the help

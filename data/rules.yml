@@ -2,9 +2,38 @@ version: "2.0"
 
 rules:
 
-- rule: Activating the booking form, intent 
+- rule: Deactivating the cleaning form, time is right away
+  condition:
+  - active_loop: cleaning_form
+  steps:
+  - intent: inform_cleaning_time_right_away
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_confirm_cleaning_right_away
+
+
+- rule: Deactivating the cleaning form
+  condition:
+  - active_loop: cleaning_form
+  steps:
+  - action: cleaning_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_schedule_cleaning
+
+- rule: Activating the booking form, only booking intent 
   steps:
   - intent: book_room
+  - action: booking_form
+  - active_loop: booking_form
+
+- rule: Activating the booking form, intent + num of people
+  steps:
+  - intent: book_room_with_num_people
+  - action: action_set_num_rooms
+  - slot_was_set:
+    - num_rooms: "1"
   - action: booking_form
   - active_loop: booking_form
 
@@ -13,7 +42,7 @@ rules:
   - intent: book_room_with_number
   - action: booking_form
   - active_loop: booking_form
-  
+
 - rule: Deativating the booking form
   condition:
   - active_loop: booking_form
@@ -38,3 +67,13 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
+
+- rule: Greet user whenever the user greets
+  steps:
+  - intent: thankyou
+  - action: utter_thankyou
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase

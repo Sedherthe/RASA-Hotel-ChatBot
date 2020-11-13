@@ -12,20 +12,21 @@ stories:
   - slot_was_set:
     - num_rooms: 2
     - room_type: "Simple"
-  # - action: booking_form
-  # - active_loop: null
-  # - intent: give_pref
-  # - action: utter_confirm_booking
 
-# - story: book room
-#   steps:
-#   - intent: book_room
-#   - action: utter_ask_num_rooms
-#   - intent: number_of_rooms_info
-#   - action: utter_ask_room_type
-#   - intent: give_pref
-#   - action: action_set_room_preference
-#   # - action: utter_confirm_booking
+- story: book room with number of people
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_room_with_num_people
+  - slot_was_set:
+    - num_people: "4"
+  - action: action_set_num_rooms
+  - slot_was_set:
+    - num_rooms: "2"
+  - action: booking_form
+  - active_loop: booking_form
+  - slot_was_set:
+    - room_type: "Simple"
 
 - story: book room with number
   steps:
@@ -36,4 +37,43 @@ stories:
   - active_loop: booking_form
   - slot_was_set:
     - room_type: "Deluxe"
-  # - action: utter_confirm_booking
+
+- story: schedule cleaning right away + later
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: schedule_room_cleaning
+  - action: cleaning_form
+  - active_loop: cleaning_form
+  - slot_was_set:
+    - duration: "30"
+
+- story: Activating the cleaning form, cleaning intent right away
+  steps:
+  - intent: schedule_room_cleaning
+  - action: cleaning_form
+  - active_loop: cleaning_form
+  - intent: inform_cleaning_time_right_away
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_confirm_cleaning_right_away
+
+- story: Activating the cleaning form, cleaning intent right away + greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: schedule_room_cleaning
+  - action: cleaning_form
+  - active_loop: cleaning_form
+  - intent: inform_cleaning_time_right_away
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_confirm_cleaning_right_away
+  
+- story: Activating the cleaning form, cleaning intent
+  steps:
+  - intent: schedule_room_cleaning
+  - action: cleaning_form
+  - active_loop: cleaning_form
+  - slot_was_set:
+    - duration: "20"

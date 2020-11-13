@@ -1,0 +1,74 @@
+version: "2.0"
+
+nlu:
+- intent: schedule_room_cleaning
+  examples: |
+    - I want to have my room cleaned
+    - I want my room to be cleaned
+    - Can I get my room cleaned?
+    - Can you please clean my room?
+    - Can you get my room cleaned?
+    - Will you get my room cleaned?
+    - Clean my room
+    - Will you clean my room
+    - I want my room to be neat and clean
+
+- intent: inform_cleaning_time_right_away
+  examples: |
+    - Could you send someone right now?
+    - Can you send someone right now?
+    - Can you send someone immediately?
+    - Can you send someone urgently?
+    - I want someone to clean right now?
+    - Can you send someone now?
+    - Could you send someone now?
+    - I want it to be cleaned now?
+    - Right now
+    - Now
+  
+- intent: inform_cleaning_time
+  examples: |
+    - Could you send someone in [2](duration) [hours](time_unit)?
+    - Can you get it cleaned after [3](duration) [hours](time_unit)?
+    - Can you get it cleaned after [1](duration) [hr](time_unit)?
+    - I want it to be cleaned after [30](duration) [minutes](time_unit)?
+    - Can you get it cleaned after [45](duration) [minutes](time_unit)?
+    - Can you get it cleaned after [15](duration) [min](time_unit)?
+    - can you get it cleaned in [two]{"entity":"duration", "value":"2"} [hours](time_unit)
+    - In [2](duration) [hours](time_unit)
+    - After [30](duration) [minutes](time_unit)
+    - After [10](duration) [min](time_unit)
+    - In [15](duration) [m](time_unit)
+    - After [1](duration) [hour](time_unit)
+    - In [1](duration) [minute](time_unit)
+    - In [1](duration) [second](time_unit)
+    - In [10](duration) [seconds](time_unit)
+    - In [30](duration) [secs](time_unit)
+    - In [5](duration) [s](time_unit)
+    - In [forty]{"entity":"duration", "value":"40"} [seconds](time_unit)
+    - In [one]{"entity":"duration", "value": "1"} [h](time_unit)
+    - After [two]{"entity":"duration", "value":"2"} [hrs](time_unit)
+    - In [three]{"entity":"duration", "value":"3"} [hours](time_unit)
+    - After [fifteen]{"entity":"duration", "value":"15"} [mins](time_unit)
+    - After [forty five]{"entity":"duration", "value":"45"} [minutes](time_unit)
+    - After [thirty]{"entity":"duration", "value":"30"} [minutes](time_unit)
+
+- synonym: "hour"
+  examples: |
+    - hour
+    - hours
+    - hrs
+    - h
+
+- synonym: "min"
+  examples: |
+    - minute
+    - minutes
+    - mins
+
+- synonym: "sec"
+  examples: |
+    - second
+    - seconds
+    - secs
+    - s

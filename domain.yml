@@ -3,27 +3,40 @@ version: "2.0"
 intents:
   - greet
   - book_room
-  - number_of_rooms_info
+  - book_room_with_num_people
   - book_room_with_number
+  - number_of_rooms_info
+  - schedule_room_cleaning
+  - inform_cleaning_time_right_away
+  - inform_cleaning_time
   - goodbye
+  - thankyou
   - give_pref
   - faq
 
 entities:
   - room_type
   - num_rooms
-  # - num_people
+  - num_people
+  - duration
+  - time_unit
 
 slots:
   room_type:
     type: text
   num_rooms:
     type: text
-  # num_people:
-  #   type: float
+  num_people:
+    type: text
+  duration:
+    type: text
+  time_unit:
+    type: text
 
 actions:
   - action_set_room_preference
+  - action_set_num_rooms
+  - action_schedule_cleaning
 
 forms:
   booking_form:
@@ -33,6 +46,10 @@ forms:
     room_type:
       - type: from_entity
         entity: room_type
+  cleaning_form:
+    duration:
+      - type: from_entity
+        entity: duration
 
 responses:
 
@@ -49,6 +66,12 @@ responses:
 
   utter_confirm_booking:
   - text: "You have chosen to book {num_rooms} {room_type} rooms"
+
+  utter_ask_duration:
+  - text: "When should I arrange for cleaning?"
+
+  utter_confirm_cleaning_right_away:
+  - text: "Sure, I will send someone to your room right away."
 
   utter_faq/query_check_in:
   - text:  "Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact the reception for early check-in requests."
@@ -78,11 +101,17 @@ responses:
   utter_greet:
   - text: "Hey there! This is the Hotel Bot!"
 
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't understand that. Could you rephrase?
+
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+
   utter_did_that_help:
   - text: "Did that help you?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_thankyou:
+  - text: "Great, hope to see ya again!"
 
   utter_goodbye:
   - text: "Bye"
