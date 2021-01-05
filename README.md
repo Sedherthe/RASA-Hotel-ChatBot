@@ -1,11 +1,4 @@
-Welcome to the assignment! In this assignment, we will try to build a simple chatbot for a hotel.
-We will be using the Rasa framework for this assignment. Do not worry if you have no experience in ML or in using Rasa. All that is required for this assignment can be gleaned from the Rasa tutorial or Rasa docs. 
-
-This assignment is intended to test your learning ability and problem-solving skills together with basic coding skills.
-
-Expected time: 4 days
-
-We hope that you have fun learning a new framework and building the chatbot!
+A Simple Chatbot for a Hotel using RASA.
 
 # Objective - 
 To build a simple chatbot for a hotel.
@@ -24,15 +17,6 @@ Example flows for these functionalities are described in detail in the Flows sec
 We highly recommend that you use a fresh virtual environment with python 3.6.8
 
 Rasa 2.0 is the only requirement for this project. Please follow the Rasa installation instructions listed at [https://rasa.com/docs/rasa/user-guide/installation/](https://rasa.com/docs/rasa/user-guide/installation/)
-
-# Instructions
-
-We suggest that you use the [Rasa framework](https://rasa.com/) to build this bot. Rasa is an open-source bot-building platform that will enable you to easily implement the functionalities required for this project.
-
-You can check out this simple [Rasa tutorial](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/) to get an idea of how to approach the problem.
-
-Please go through the Rasa 2.0 docs to familiarize yourself with how to use the different aspects of Rasa.
-
 
 # Flows
 
@@ -163,16 +147,4 @@ Bot: You have chosen to book 2 simple rooms
 
 ---
 
-Usage of git to iteratively build your code will be much appreciated. It will help us get a good idea about your progress.
-
-# Submission
-
-Please fill in [this google form](https://forms.gle/hNmNu2vS62TCPWPq7) to submit your assignment. (It contains some info about your assignment such as link to your repo and model which will help us in auto-grading)
-
-Point to note - 
-* Make sure that the link to your assignment repo is correct
-* Make sure that the link to your model is visible and downloadable using wget.
-
-Both of these are essential for us to auto-grade your submission.
-
-Hope that this would be a fun experience for you and you learn something interesting. Happy coding!
+Built as part of the challenge given by @LimeChat! Will soon dockerize the whole thing and host it! Look out for the link xD
